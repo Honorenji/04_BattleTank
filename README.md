@@ -7,4 +7,4 @@ This is my repository for BattleTanks I'm creating through the Udemy course I'm 
 ## Lectures
 * BT01 - Intro, Notes & Assets
 * BT02 - Game Design Document (GDD)
-* 
+* BT03 - Setting Up a GitHub "Repo"
