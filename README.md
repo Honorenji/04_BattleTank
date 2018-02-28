@@ -10,3 +10,5 @@ This is my repository for BattleTanks I'm creating through the Udemy course I'm 
 * BT04 - Setting Up a GitHub "Repo"
 * BT05 - Creating & Deleting Landscapes
 * BT06 - Landscape Setup & Scaling
+* BT07 - A Landscaping Process
+* 
