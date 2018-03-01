@@ -16,3 +16,4 @@ This is my repository for BattleTanks I'm creating through the Udemy course I'm 
 * BT10 - Actors from Multiple Meshes
 * BT14 - Configuring a Tank
 * BT15 - 3rd Person Camera Control
+* BT16 - Fixing 3rd Person Camera Rotation
