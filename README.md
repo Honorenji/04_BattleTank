@@ -24,3 +24,4 @@ This is my repository for BattleTanks I'm creating through the Udemy course I'm 
 * BT21 - Trial Packaging Your Game
 * BT22 - Delegating to Components
 * BT23 - Using virtual and override
+* BT26 - Creating an AI Controller Class
