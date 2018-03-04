@@ -18,7 +18,7 @@ public:
 
 	void SetBarrelReference(UStaticMeshComponent* BarrelToSet);
 
-	void AimAt(FVector);
+	void AimAt(FVector, float);
 
 protected:
 

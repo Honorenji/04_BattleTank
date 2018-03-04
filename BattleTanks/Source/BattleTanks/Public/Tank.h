@@ -20,7 +20,7 @@ protected:
 	UTankAimingComponent* TankAimingComponent = nullptr;
 
 
-public:	
+private:	
 	// Sets default values for this pawn's properties
 	ATank();
 
@@ -32,6 +32,9 @@ public:
 
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+
+	UPROPERTY(EditAnywhere, Category = Firing)
+	float LaunchSpeed = 100000; // TODO find sensible starting value of m/s
 
 	UFUNCTION(BlueprintCallable, Category = Setup)
 	void SetBarrelReference(UStaticMeshComponent* BarrelToSet);

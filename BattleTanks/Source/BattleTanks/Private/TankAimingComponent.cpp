@@ -19,13 +19,10 @@ void UTankAimingComponent::SetBarrelReference(UStaticMeshComponent * BarrelToSet
 	Barrel = BarrelToSet;
 }
 
-void UTankAimingComponent::AimAt(FVector HitLocation)
+void UTankAimingComponent::AimAt(FVector HitLocation, float LaunchSpeed)
 {
 	if (!Barrel) return;
-	UE_LOG(LogTemp, Warning, TEXT("%s is aiming at location: %s from barrel location: %s"), 
-		*GetOwner()->GetName(), 
-		*HitLocation.ToString(), 
-		*Barrel->GetComponentLocation().ToString());
+	UE_LOG(LogTemp, Warning, TEXT("%s fires with LaunchSpeed: %f"), *GetOwner()->GetName(), LaunchSpeed)
 }
 
 // Called when the game starts
