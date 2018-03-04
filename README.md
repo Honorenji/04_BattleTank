@@ -36,3 +36,4 @@ This is my repository for BattleTanks I'm creating through the Udemy course I'm 
 * BT35 - BlueprintCallable()
 * BT36 - SuggestProjectileVelocity()
 * BT37 - Predict Projectile Landing Point
+* BT38 - Using FRotators in Unreal
