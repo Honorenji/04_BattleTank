@@ -35,3 +35,4 @@ This is my repository for BattleTanks I'm creating through the Udemy course I'm 
 * BT34 - Create Default Sub Objects in C++
 * BT35 - BlueprintCallable()
 * BT36 - SuggestProjectileVelocity()
+* BT37 - Predict Projectile Landing Point
