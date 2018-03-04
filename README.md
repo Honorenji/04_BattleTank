@@ -31,3 +31,4 @@ This is my repository for BattleTanks I'm creating through the Udemy course I'm 
 * BT30 - Finding Screen Pixel Coordinates
 * BT31 - Using DeprojectScreenToWorld
 * BT32 - Using LineTraceSingleByChannel
+* BT33 - Unify Player & AI Aiming
