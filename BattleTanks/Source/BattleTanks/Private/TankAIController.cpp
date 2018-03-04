@@ -3,6 +3,7 @@
 #include "TankAIController.h"
 #include "GameFramework/Actor.h"
 
+
 void ATankAIController::BeginPlay()
 {
 	Super::BeginPlay();

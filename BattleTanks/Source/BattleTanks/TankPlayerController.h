@@ -14,11 +14,19 @@ UCLASS()
 class BATTLETANKS_API ATankPlayerController : public APlayerController
 {
 	GENERATED_BODY()
+
+		ATankPlayerController();
 	
 private:
 
 	virtual void BeginPlay() override;
+
+	virtual void Tick(float DeltaTime) override;
+
 	ATank* GetControlledTank() const;
+
+	// Aim the ControlledTank's barrel to where the crosshair intersects with the world.
+	void AimAtCrosshair();
 	
 	
 };
