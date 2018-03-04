@@ -28,5 +28,6 @@ private:
 	// Aim the ControlledTank's barrel to where the crosshair intersects with the world.
 	void AimAtCrosshair();
 	
-	
+	// Return an OUT parameter, true if hit landscape
+	bool GetSightRayHitLocation(FVector& OutHitLocation) const;
 };
