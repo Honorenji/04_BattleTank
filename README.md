@@ -39,5 +39,6 @@ This is my repository for BattleTanks I'm creating through the Udemy course I'm 
 * BT38 - Using FRotators in Unreal
 * BT40 - Using Forward Declarations
 * BT44 - How To Report Bugs
+* BT45 - Using Clamp() to Limit Values
 * BT41 - BlueprintSpawnableComponent()
 * BT42 - Review Our Execution Flow
