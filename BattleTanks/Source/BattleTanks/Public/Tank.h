@@ -7,6 +7,8 @@
 #include "GameFramework/Pawn.h"
 #include "Tank.generated.h"
 
+class UTankBarrel;
+
 UCLASS()
 class BATTLETANKS_API ATank : public APawn
 {
@@ -37,7 +39,7 @@ private:
 	float LaunchSpeed = 100000; // TODO find sensible starting value of m/s
 
 	UFUNCTION(BlueprintCallable, Category = Setup)
-	void SetBarrelReference(UStaticMeshComponent* BarrelToSet);
+	void SetBarrelReference(UTankBarrel* BarrelToSet);
 
 	
 	
