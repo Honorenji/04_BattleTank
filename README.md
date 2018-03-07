@@ -46,3 +46,4 @@ This is my repository for BattleTanks I'm creating through the Udemy course I'm 
 * BT48 - Setting Up Projectiles
 * BT51 - Working Round Awkward Bugs
 * BT52 - Using SpawnActor<>() to Spawn
+* BT53 - Projectile Movement Components
