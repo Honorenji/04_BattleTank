@@ -30,7 +30,6 @@ ATank* ATankPlayerController::GetControlledTank() const
 void ATankPlayerController::AimAtCrosshair()
 {
 	if (!GetControlledTank()) { return; }
-	// TODO Implement pointing ControlledTank to crosshair's intersection
 
 	FVector HitLocation; // out parameter
 	if (GetSightRayHitLocation(HitLocation)) // side effect: performs a line-trace

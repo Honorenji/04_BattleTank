@@ -26,8 +26,6 @@ public:
 
 	void SetTurretReference(UTankTurret* TurretToSet);
 
-	// TODO set Turret Reference
-
 	void AimAt(FVector, float);
 
 protected:
