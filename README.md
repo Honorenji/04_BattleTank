@@ -44,3 +44,4 @@ This is my repository for BattleTanks I'm creating through the Udemy course I'm 
 * BT42 - Review Our Execution Flow
 * BTCHALLANGE - Turret Rotation
 * BT48 - Setting Up Projectiles
+* BT51 - Working Round Awkward Bugs
