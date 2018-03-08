@@ -48,3 +48,4 @@ This is my repository for BattleTanks I'm creating through the Udemy course I'm 
 * BT52 - Using SpawnActor<>() to Spawn
 * BT53 - Projectile Movement Components
 * BT54 - Making AI Tanks Fire
+* BT55 - EditAnywhere vs EditDefaultsOnly
