@@ -4,21 +4,21 @@
 
 #include "CoreMinimal.h"
 #include "Components/StaticMeshComponent.h"
-#include "TankTurret.generated.h"
+#include "TankTrack.generated.h"
 
 /**
- * Used to rotate TankBarrel to shoot in 360 degrees.
+ * Used to set the maximum driving force of the tank. 
+ * Applies forces to the tank.
  * Use the set reference method to set a reference to this component.
  */
 UCLASS(ClassGroup = (Custom), meta = (BlueprintSpawnableComponent))
-class BATTLETANKS_API UTankTurret : public UStaticMeshComponent
+class BATTLETANKS_API UTankTrack : public UStaticMeshComponent
 {
 	GENERATED_BODY()
-
+	
 public:
-	void Rotate(float);
-
-private:
-	UPROPERTY(EditDefaultsOnly, Category = Setup)
-		float MaxDegreesPerSecond = 5;
+	UFUNCTION(BlueprintCallable)
+	void SetThrottle(float Throttle);
+	
+	
 };

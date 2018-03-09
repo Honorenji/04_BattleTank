@@ -7,9 +7,11 @@
 #include "TankBarrel.generated.h"
 
 /**
- * 
+ * Allows for the launching of projectiles.
+ * Projectiles must inherit from <Projectile>
+ * Use the set reference method to set a reference to this component.
  */
-UCLASS( ClassGroup = (Custom), meta = (BlueprintSpawnableComponent)/*, hidecategories = ("Collision")*/)
+UCLASS( ClassGroup = (Custom), meta = (BlueprintSpawnableComponent))
 class BATTLETANKS_API UTankBarrel : public UStaticMeshComponent
 {
 	GENERATED_BODY()
@@ -18,13 +20,13 @@ public:
 	void Elevate(float);
 
 private:
-	UPROPERTY(EditAnywhere, Category = Setup)
+	UPROPERTY(EditDefaultsOnly, Category = Setup)
 	float MaxDegreesPerSecond = 5;
 
-	UPROPERTY(EditAnywhere, Category = Setup)
+	UPROPERTY(EditDefaultsOnly, Category = Setup)
 	float MaxElevationDegrees = 40;
 
-	UPROPERTY(EditAnywhere, Category = Setup)
+	UPROPERTY(EditDefaultsOnly, Category = Setup)
 	float MinElevationDegrees = 0;
 
 	
