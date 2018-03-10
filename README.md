@@ -54,3 +54,4 @@ This is my repository for BattleTanks I'm creating through the Udemy course I'm 
 * BT59 - ApplyForceAtLocation() in Action
 * BT60 - Physics Materials & Friction
 * BT62 - Using BlueprintReadOnly
+* BT63 - A Better Component Architecture
