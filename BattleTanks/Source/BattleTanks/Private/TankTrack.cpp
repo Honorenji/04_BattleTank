@@ -9,7 +9,6 @@
 */
 void UTankTrack::SetThrottle(float Throttle)
 {
-	UE_LOG(LogTemp, Warning, TEXT("%s received an input of %f."), *GetName(), Throttle)
 
 	// Clamp Throttle between 1 and -1 so player can't drive faster.
 	Throttle = FMath::Clamp<float>(Throttle, -1, 1);

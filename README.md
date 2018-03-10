@@ -53,3 +53,4 @@ This is my repository for BattleTanks I'm creating through the Udemy course I'm 
 * BT58 - Setup Track Throttles
 * BT59 - ApplyForceAtLocation() in Action
 * BT60 - Physics Materials & Friction
+* BT62 - Using BlueprintReadOnly

@@ -10,7 +10,6 @@ ATankPlayerController::ATankPlayerController()
 void ATankPlayerController::BeginPlay()
 {
 	Super::BeginPlay();
-	if (!GetControlledTank()) { UE_LOG(LogTemp, Warning, TEXT("TankPlayerController could not posses tank!"));}
 
 	AimAtCrosshair();
 }
