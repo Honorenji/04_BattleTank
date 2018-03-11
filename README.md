@@ -60,3 +60,4 @@ This is my repository for BattleTanks I'm creating through the Udemy course I'm 
 * BT67 - DotProduct() Vector Operator
 * BT68 - CrossProduct() Vector Operator
 * BT69 - Finalising Your Class Code
+* BT70 - How to Use Blueprint Variables

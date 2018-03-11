@@ -24,9 +24,7 @@ public:
 	virtual void Tick(float DeltaTime) override;
 	
 private:
-
-	ATank* GetControlledTank() const;
-
+	
 	// Aim the ControlledTank's barrel to where the crosshair intersects with the world.
 	void AimAtCrosshair();
 	
@@ -45,4 +43,9 @@ private:
 
 	UPROPERTY(EditDefaultsOnly)
 	float LineTraceRange = 1000000;
+
+protected:
+
+	UFUNCTION(BlueprintCallable, Category = "Setup")
+	ATank* GetControlledTank() const;
 };
