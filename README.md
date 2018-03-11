@@ -57,3 +57,4 @@ This is my repository for BattleTanks I'm creating through the Udemy course I'm 
 * BT63 - A Better Component Architecture
 * BT64 - Completing Manual Tank Movement
 * BT66 - Dissecting RequestDirectMove()
+* BT67 - DotProduct() Vector Operator
