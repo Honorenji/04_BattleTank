@@ -16,7 +16,9 @@ void UTankMovementComponent::RequestDirectMove(const FVector & MoveVelocity, boo
 	auto AIIntendForward = MoveVelocity.GetSafeNormal();
 
 	auto ForwardThrow = FVector::DotProduct(TankForward, AIIntendForward);
+	auto RightThrow = FVector::CrossProduct(TankForward, AIIntendForward).Z;
 	IntendMoveForward(ForwardThrow);
+	IntendTurnRight(RightThrow);
 
 	//UE_LOG(LogTemp, Warning, TEXT("%s has a MoveVelocity of: %s"), *GetOwner()->GetName(), *MoveVelocity.GetSafeNormal().ToString());
 }
