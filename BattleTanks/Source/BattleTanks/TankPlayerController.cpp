@@ -12,7 +12,7 @@ void ATankPlayerController::BeginPlay()
 {
 	Super::BeginPlay();
 	auto AimingComponent = GetControlledTank()->FindComponentByClass<UTankAimingComponent>();
-	if (AimingComponent) { FoundAimingComponent(AimingComponent); }
+	if (ensure(AimingComponent)) { FoundAimingComponent(AimingComponent); }
 	else UE_LOG(LogTemp, Error, TEXT("TankPlayerController can't create reference to TankAimingComponent. Check if controlled pawn has a TankAimingComponent."));
 }
 
@@ -30,7 +30,7 @@ ATank* ATankPlayerController::GetControlledTank() const
 // Aim the ControlledTank's barrel to where the crosshair intersects with the world.
 void ATankPlayerController::AimAtCrosshair()
 {
-	if (!GetControlledTank()) { return; }
+	if (!ensure(GetControlledTank())) { return; }
 
 	FVector HitLocation; // out parameter
 	if (GetSightRayHitLocation(HitLocation)) // side effect: performs a line-trace

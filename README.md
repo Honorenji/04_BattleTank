@@ -65,3 +65,4 @@ This is my repository for BattleTanks I'm creating through the Udemy course I'm 
 * BT74 - Attaching a Debugger to Unreal
 * BT75 - Decoupling Your Architecture
 * BT77 - BlueprintImplementableEvent
+* BT78 - Using the ensure Assertion
