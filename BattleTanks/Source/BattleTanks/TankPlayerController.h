@@ -44,6 +44,8 @@ private:
 	UPROPERTY(EditDefaultsOnly)
 	float LineTraceRange = 1000000;
 
+
+
 protected:
 
 	UFUNCTION(BlueprintCallable, Category = "Setup")

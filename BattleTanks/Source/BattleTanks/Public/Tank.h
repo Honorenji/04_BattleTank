@@ -20,7 +20,12 @@ public:
 	void AimAt(FVector HitLocation);
 
 	UFUNCTION(BlueprintCallable, Category = "Fire")
-		void Fire();
+	void Fire();
+
+	UFUNCTION(BlueprintCallable, Category = "Setup")
+	void Initialise(
+		UTankAimingComponent* TankAimingComponentToSet,
+		UTankBarrel* BarrelToSet);
 
 private:	
 	// Sets default values for this pawn's properties
