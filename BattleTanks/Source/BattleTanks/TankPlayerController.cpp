@@ -2,6 +2,7 @@
 
 #include "TankPlayerController.h"
 #include "Tank.h"
+#include "TankAimingComponent.h"
 
 ATankPlayerController::ATankPlayerController()
 {
@@ -10,8 +11,9 @@ ATankPlayerController::ATankPlayerController()
 void ATankPlayerController::BeginPlay()
 {
 	Super::BeginPlay();
-
-	AimAtCrosshair();
+	auto AimingComponent = GetControlledTank()->FindComponentByClass<UTankAimingComponent>();
+	if (AimingComponent) { FoundAimingComponent(AimingComponent); }
+	else UE_LOG(LogTemp, Error, TEXT("TankPlayerController can't create reference to TankAimingComponent. Check if controlled pawn has a TankAimingComponent."));
 }
 
 void ATankPlayerController::Tick(float DeltaTime)

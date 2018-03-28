@@ -64,3 +64,4 @@ This is my repository for BattleTanks I'm creating through the Udemy course I'm 
 * BT71 - Using Enum(erations) in UE4
 * BT74 - Attaching a Debugger to Unreal
 * BT75 - Decoupling Your Architecture
+* BT77 - BlueprintImplementableEvent
