@@ -7,7 +7,6 @@
 #include "Tank.generated.h"
 
 class UTankBarrel;
-class UTankAimingComponent;
 class AProjectile;
 
 UCLASS()
@@ -16,8 +15,6 @@ class BATTLETANKS_API ATank : public APawn
 	GENERATED_BODY()
 
 public:
-	
-	void AimAt(FVector HitLocation);
 
 	UFUNCTION(BlueprintCallable, Category = "Fire")
 	void Fire();
@@ -43,6 +40,4 @@ private:
 	UTankBarrel* Barrel = nullptr;
 
 	double LastFireTime = 0;
-	
-	UTankAimingComponent* TankAimingComponent = nullptr;
 };

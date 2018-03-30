@@ -67,3 +67,4 @@ This is my repository for BattleTanks I'm creating through the Udemy course I'm 
 * BT77 - BlueprintImplementableEvent
 * BT78 - Using the ensure Assertion
 * BT81 - Starting From Green
+* BT82 - Aiming Without the Tank
