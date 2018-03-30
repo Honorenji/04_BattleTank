@@ -13,12 +13,12 @@ ATank::ATank()
 
 }
 
-void ATank::Initialise(
-	UTankAimingComponent * TankAimingComponentToSet,
-	UTankBarrel* BarrelToSet)
+void ATank::BeginPlay()
 {
-	TankAimingComponent = TankAimingComponentToSet;
-	Barrel = BarrelToSet;
+	Super::BeginPlay();
+
+	TankAimingComponent = FindComponentByClass<UTankAimingComponent>();
+	Barrel = FindComponentByClass<UTankBarrel>();
 }
 
 void ATank::AimAt(FVector HitLocation)

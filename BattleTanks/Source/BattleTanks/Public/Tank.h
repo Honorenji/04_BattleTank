@@ -22,15 +22,14 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Fire")
 	void Fire();
 
-	UFUNCTION(BlueprintCallable, Category = "Setup")
-	void Initialise(
-		UTankAimingComponent* TankAimingComponentToSet,
-		UTankBarrel* BarrelToSet);
+protected:
+	virtual void BeginPlay() override;
 
 private:	
 	// Sets default values for this pawn's properties
 	ATank();
 
+	// TODO remove once firing is handled by the Aiming Component
 	UPROPERTY(EditDefaultsOnly, Category = "Firing")
 	float LaunchSpeed = 100000;
 
