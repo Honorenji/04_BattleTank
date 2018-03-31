@@ -2,17 +2,11 @@
 
 #include "TankTrack.h"
 #include "Components/PrimitiveComponent.h"
+#include "Engine/World.h"
 
 UTankTrack::UTankTrack()
 {
-	PrimaryComponentTick.bCanEverTick = true;
-}
-
-
-void UTankTrack::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction * ThisTickFunction)
-{
-	// UE_LOG(LogTemp, Warning, TEXT("%s ticking."), *GetName());
-
+	PrimaryComponentTick.bCanEverTick = false;
 }
 
 void UTankTrack::BeginPlay()
@@ -27,14 +21,17 @@ void UTankTrack::OnHit(
 	FVector NormalImpulse, 
 	const FHitResult & Hit)
 {
-	UE_LOG(LogTemp, Warning, TEXT("I'm hit! Call for back-up!"));
+	DriveTrack();
+	ApplySidewaysForce();
+	CurrentThrottle = 0; // Reset Throttle so tank won't apply force when trigger is released.
 }
 
-void UTankTrack::CustomTick(float DeltaTime)
+void UTankTrack::ApplySidewaysForce()
 {
 	auto SlippageSpeed = FVector::DotProduct(GetRightVector(), GetComponentVelocity());
 
 	// Work-out the required acceleration this frame to correct
+	auto DeltaTime = GetWorld()->GetDeltaSeconds();
 	auto CorrectionAcceleration = -SlippageSpeed / DeltaTime * GetRightVector();
 
 	// Calculate and apply force
@@ -51,9 +48,12 @@ void UTankTrack::SetThrottle(float Throttle)
 {
 
 	// Clamp Throttle between 1 and -1 so player can't drive faster.
-	Throttle = FMath::Clamp<float>(Throttle, -1, 1);
+	CurrentThrottle = FMath::Clamp(CurrentThrottle + Throttle, -1.0f, +1.0f);
+}
 
-	auto ForceApplied = GetForwardVector() * Throttle * TrackMaxDrivingForce;
+void UTankTrack::DriveTrack()
+{
+	auto ForceApplied = GetForwardVector() * CurrentThrottle * TrackMaxDrivingForce;
 	auto ForceLocation = GetComponentLocation();
 	auto TankRoot = Cast<UPrimitiveComponent>(GetOwner()->GetRootComponent());
 	TankRoot->AddForceAtLocation(ForceApplied, ForceLocation);
