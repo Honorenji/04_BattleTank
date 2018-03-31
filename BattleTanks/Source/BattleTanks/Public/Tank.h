@@ -8,6 +8,7 @@
 
 /// Forward Declaration
 class UTankAimingComponent;
+class UTankTrack;
 
 UCLASS()
 class BATTLETANKS_API ATank : public APawn
@@ -20,7 +21,13 @@ private:
 
 	UTankAimingComponent* AimingComponent = nullptr;
 
-	virtual void Tick(float Deltatime) override;
+	UTankTrack* LeftTrack = nullptr;
+
+	UTankTrack* RightTrack = nullptr;
+
+	TArray<UTankTrack*> Tracks;
+
+	virtual void Tick(float DeltaTime) override;
 
 	virtual void BeginPlay() override;
 	

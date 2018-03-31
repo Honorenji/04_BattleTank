@@ -44,7 +44,7 @@ void UTankAimingComponent::TickComponent(float DeltaTime, enum ELevelTick TickTy
 	*/
 }
 
-void UTankAimingComponent::CustomTick()
+void UTankAimingComponent::CustomTick(float DeltaTime)
 {
 	if (FPlatformTime::Seconds() - LastFireTime < ReloadTimeInSeconds)
 	{
