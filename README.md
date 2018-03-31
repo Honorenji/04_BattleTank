@@ -71,4 +71,4 @@ This is my repository for BattleTanks I'm creating through the Udemy course I'm 
 * BT83 - Finishing our Refactoring
 * BT84 - Adding TickComponent() Back
 * BT85 - Are Two Floats Equal?
-* BT86 - Programmatic Sideways Friction
+* BT86 - OnComponentHit Event in 4.12
