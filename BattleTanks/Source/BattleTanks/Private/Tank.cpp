@@ -11,12 +11,13 @@ ATank::ATank()
 }
 
 void ATank::Tick(float DeltaTime)
-{
+{ /*
 	Super::Tick(DeltaTime);
 	if (ensure(AimingComponent))
 	{
 		AimingComponent->CustomTick(DeltaTime);
 	}
+	*/
 }
 
 void ATank::BeginPlay()

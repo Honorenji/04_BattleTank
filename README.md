@@ -73,3 +73,4 @@ This is my repository for BattleTanks I'm creating through the Udemy course I'm 
 * BT85 - Are Two Floats Equal?
 * BT86 - OnComponentHit Event in 4.12
 * BT87 - Avoiding Boolean Flags
+* BTFeedback - Bugfixing TickComponent() & Rotation not working.
