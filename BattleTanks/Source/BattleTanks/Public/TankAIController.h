@@ -19,7 +19,8 @@ private:
 	virtual void Tick(float DeltaTime) override;
 
 	// How close can the AI get
-	float AcceptanceRadius = 3000;
+	UPROPERTY(EditDefaultsOnly, Category = "AI Behaviour")
+	float AcceptanceRadius = 8000;
 	
 	
 };
