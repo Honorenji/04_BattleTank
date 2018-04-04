@@ -80,9 +80,10 @@ private:
 	UPROPERTY(EditDefaultsOnly, Category = "Fire")
 	float ReloadTimeInSeconds = 3;
 
-	double LastFireTime = 0;
-
+	UPROPERTY(EditDefaultsOnly, Category = "Fire")
 	int32 RoundsLeft = 3;
+
+	double LastFireTime = 0;
 
 		
 	
