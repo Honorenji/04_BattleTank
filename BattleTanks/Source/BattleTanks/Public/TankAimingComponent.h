@@ -43,8 +43,6 @@ public:
 
 	virtual void TickComponent(float DeltaTime, enum ELevelTick TickType, FActorComponentTickFunction *ThisTickFunction) override;
 
-	void CustomTick(float DeltaTime);
-
 protected:
 
 	UPROPERTY(BlueprintReadOnly, Category = "State")

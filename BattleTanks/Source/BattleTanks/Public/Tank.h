@@ -6,9 +6,6 @@
 #include "GameFramework/Pawn.h"
 #include "Tank.generated.h"
 
-/// Forward Declaration
-class UTankAimingComponent;
-
 UCLASS()
 class BATTLETANKS_API ATank : public APawn
 {
@@ -17,11 +14,5 @@ class BATTLETANKS_API ATank : public APawn
 private:	
 	// Sets default values for this pawn's properties
 	ATank();
-
-	UTankAimingComponent* AimingComponent = nullptr;
-
-	virtual void Tick(float DeltaTime) override;
-
-	virtual void BeginPlay() override;
 	
 };

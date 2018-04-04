@@ -41,22 +41,6 @@ void UTankAimingComponent::TickComponent(float DeltaTime, enum ELevelTick TickTy
 	}
 }
 
-void UTankAimingComponent::CustomTick(float DeltaTime)
-{
-	if (FPlatformTime::Seconds() - LastFireTime < ReloadTimeInSeconds)
-	{
-		FiringState = EFiringState::Reloading;
-	}
-	else if (bIsBarrelMoving())
-	{
-		FiringState = EFiringState::Aiming;
-	}
-	else
-	{
-		FiringState = EFiringState::Locked;
-	}
-}
-
 void UTankAimingComponent::Initialise(UTankBarrel * BarrelToSet, UTankTurret * TurretToSet)
 {
 	if (!ensure(BarrelToSet && TurretToSet)) { return; }
@@ -99,8 +83,14 @@ void UTankAimingComponent::AimTowards(FVector AimDirection)
 	auto BarrelRotator = Barrel->GetForwardVector().Rotation();
 	auto AimAsRotator = AimDirection.Rotation();
 	auto DeltaRotator = AimAsRotator - BarrelRotator;
+
 	Barrel->Elevate(DeltaRotator.Pitch);
-	Turret->Rotate(DeltaRotator.Yaw);
+
+	if (DeltaRotator.Yaw < 180.f)
+	{
+		Turret->Rotate(DeltaRotator.Yaw);
+	}
+	else Turret->Rotate(-DeltaRotator.Yaw);
 }
 
 bool UTankAimingComponent::bIsBarrelMoving()
