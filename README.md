@@ -84,3 +84,4 @@ This is my repository for BattleTanks I'm creating through the Udemy course I'm 
 * BT98 - Radial Forces & Caching
 * BT99 - Using GetTimerMamager()
 * BT100 - Using TakeDamage() on Actors
+* BT101 - BlueprintPure & Health Bars

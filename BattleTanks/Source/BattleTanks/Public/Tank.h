@@ -22,7 +22,9 @@ private:
 	int32  CurrentHealth = StartingHealth;
 
 public:
-	
+	UFUNCTION(BlueprintPure, Category = "Health")
+	float GetHealthPercent() const;
+
 	virtual float TakeDamage(
 		float DamageAmount,
 		struct FDamageEvent const& DamageEvent,
