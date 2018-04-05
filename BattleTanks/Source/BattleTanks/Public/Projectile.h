@@ -10,6 +10,7 @@ class UProjectileMovementComponent;
 class UParticleSystemComponent;
 class URadialForceComponent;
 
+
 UCLASS()
 class BATTLETANKS_API AProjectile : public AActor
 {
@@ -25,6 +26,8 @@ private:
 			UPrimitiveComponent* OtherComp,
 			FVector NormalImpulse,
 			const FHitResult& Hit);
+	
+	void DestroySelf();
 
 	UPROPERTY(VisibleAnywhere, Category = "Component")
 	UProjectileMovementComponent* ProjectileMovement = nullptr;
@@ -40,6 +43,14 @@ private:
 
 	UPROPERTY(VisibleAnywhere, Category = "Component")
 	URadialForceComponent* ExplosionForce = nullptr;
+
+	UPROPERTY(EditDefaultsOnly, Category = "Timers")
+	FTimerHandle DestroyTimer;
+
+	UPROPERTY(EditDefaultsOnly, Category = "Timers")
+	float DestroyDelayInSeconds = 5;
+
+
 
 protected:
 	// Called when the game starts or when spawned

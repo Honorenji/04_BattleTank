@@ -1,9 +1,12 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #include "Projectile.h"
+#include "Engine/EngineTypes.h"
+#include "Engine/World.h"
 #include "GameFramework/ProjectileMovementComponent.h"
 #include "Particles/ParticleSystemComponent.h"
 #include "PhysicsEngine/RadialForceComponent.h"
+#include "TimerManager.h"
 
 // Sets default values
 AProjectile::AProjectile()
@@ -51,6 +54,17 @@ void AProjectile::OnHit(
 	LaunchBlast->Deactivate();
 	ImpactBlast->Activate();
 	ExplosionForce->FireImpulse();
+
+	SetRootComponent(ImpactBlast);
+	if (ensure(CollisionMesh)) { CollisionMesh->DestroyComponent(); }
+
+	GetWorld()->GetTimerManager().SetTimer(DestroyTimer, this, &AProjectile::DestroySelf, DestroyDelayInSeconds, false, -1.f);
+}
+
+void AProjectile::DestroySelf()
+{
+	GetWorld()->GetTimerManager().ClearAllTimersForObject(this);
+	Destroy();
 }
 
 void AProjectile::LaunchProjectile(float LaunchSpeed)
