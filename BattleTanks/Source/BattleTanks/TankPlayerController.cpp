@@ -31,6 +31,7 @@ void ATankPlayerController::SetPawn(APawn * InPawn)
 void ATankPlayerController::OnPossedTankDeath()
 {
 	UE_LOG(LogTemp, Warning, TEXT("YOU DIED. scrub."));
+	StartSpectatingOnly();
 }
 
 void ATankPlayerController::Tick(float DeltaTime)

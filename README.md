@@ -86,3 +86,4 @@ This is my repository for BattleTanks I'm creating through the Udemy course I'm 
 * BT100 - Using TakeDamage() on Actors
 * BT101 - BlueprintPure & Health Bars
 * BT102 - The Observer Pattern
+* Finishing off!

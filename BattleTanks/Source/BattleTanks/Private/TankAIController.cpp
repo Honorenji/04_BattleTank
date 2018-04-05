@@ -17,13 +17,16 @@ void ATankAIController::Tick(float DeltaTime)
 	auto PlayerTank = GetWorld()->GetFirstPlayerController()->GetPawn();
 	auto AimingComponent = GetPawn()->FindComponentByClass<UTankAimingComponent>();
 
-	if (!ensure(PlayerTank && AimingComponent)) { return; }
+	if (!ensure(AimingComponent)) { return; }
 
-	// TODO Go to player
-	MoveToActor(PlayerTank, AcceptanceRadius);
+	if (PlayerTank) 
+	{
+		// TODO Go to player
+		MoveToActor(PlayerTank, AcceptanceRadius);
 
-	// Aim at Player
-	AimingComponent->AimAt(PlayerTank->GetActorLocation());
+		// Aim at Player
+		AimingComponent->AimAt(PlayerTank->GetActorLocation());
+	}
 
 	// Only fire when aiming or locked
 	if (AimingComponent->GetFiringState() == EFiringState::Locked)
@@ -49,6 +52,8 @@ void ATankAIController::SetPawn(APawn * InPawn)
 void ATankAIController::OnPossedTankDeath()
 {
 	UE_LOG(LogTemp, Warning, TEXT("This AI mothaf- died."));
+	if (!ensure(GetPawn())) { return; }
+	GetPawn()->DetachFromControllerPendingDestroy();
 }
 
 

@@ -62,7 +62,7 @@ private:
 
 	void AimTowards(FVector);
 
-	bool bIsBarrelMoving();
+	bool IsBarrelMoving();
 
 
 	FVector AimDirection;
