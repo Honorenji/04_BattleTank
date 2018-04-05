@@ -56,6 +56,8 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
+	UPROPERTY(EditDefaultsOnly, Category = "Setup")
+	float BaseDamage = 20;
 public:	
 
 	void LaunchProjectile(float);

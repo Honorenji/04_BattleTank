@@ -8,3 +8,22 @@ ATank::ATank()
 {
 
 }
+
+float ATank::TakeDamage(
+	float DamageAmount, 
+	FDamageEvent const & DamageEvent, 
+	AController * EventInstigator,
+	AActor * DamageCauser)
+{
+	int32 DamagePoints = FPlatformMath::RoundToInt(DamageAmount);
+	int32 DamageToApply = FMath::Clamp(DamagePoints, 0, CurrentHealth);
+	UE_LOG(LogTemp, Warning, TEXT("Damage Amount send: %f, Damage to be applied: %d."), DamageAmount, DamageToApply);
+
+	CurrentHealth -= DamageToApply;
+	UE_LOG(LogTemp, Warning, TEXT("%s has %d HP left."), *GetName(), CurrentHealth);
+	if (CurrentHealth <= 0)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("%s has died!"), *GetName());
+	}
+	return DamageToApply;
+}

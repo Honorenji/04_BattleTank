@@ -83,3 +83,4 @@ This is my repository for BattleTanks I'm creating through the Udemy course I'm 
 * BT95 - Introducing Particle Systems
 * BT98 - Radial Forces & Caching
 * BT99 - Using GetTimerMamager()
+* BT100 - Using TakeDamage() on Actors
