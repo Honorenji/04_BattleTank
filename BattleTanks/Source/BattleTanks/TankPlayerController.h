@@ -21,10 +21,15 @@ public:
 
 	virtual void BeginPlay() override;
 
+	virtual void SetPawn(APawn* InPawn) override;
+
 	virtual void Tick(float DeltaTime) override;
 	
 private:
 	
+	UFUNCTION()
+	void OnPossedTankDeath();
+
 	// Aim the ControlledTank's barrel to where the crosshair intersects with the world.
 	void AimAtCrosshair();
 	

@@ -28,7 +28,7 @@ float ATank::TakeDamage(
 	UE_LOG(LogTemp, Warning, TEXT("%s has %d HP left."), *GetName(), CurrentHealth);
 	if (CurrentHealth <= 0)
 	{
-		UE_LOG(LogTemp, Warning, TEXT("%s has died!"), *GetName());
+		OnDeath.Broadcast();
 	}
 	return DamageToApply;
 }
